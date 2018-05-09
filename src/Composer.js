@@ -25,10 +25,6 @@ export default class Composer extends React.Component {
     }
   }
 
-  onChangeText(text) {
-    this.props.onTextChanged(text);
-  }
-
   render() {
     return (
       <TextInput
@@ -37,10 +33,8 @@ export default class Composer extends React.Component {
         multiline={this.props.multiline}
         onChange={(e) => this.onContentSizeChange(e)}
         onContentSizeChange={(e) => this.onContentSizeChange(e)}
-        onChangeText={(text) => this.onChangeText(text)}
         style={[styles.textInput, this.props.textInputStyle, { height: this.props.composerHeight }]}
         autoFocus={this.props.textInputAutoFocus}
-        value={this.props.text}
         accessibilityLabel={this.props.text || this.props.placeholder}
         enablesReturnKeyAutomatically
         underlineColorAndroid="transparent"

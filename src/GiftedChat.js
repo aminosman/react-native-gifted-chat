@@ -85,7 +85,7 @@ class GiftedChat extends React.Component {
     if (!Array.isArray(messages)) {
       messages = [messages];
     }
-    return inverted ? messages.concat(currentMessages) : currentMessages.concat(messages);
+    return inverted ? [...messages, ...currentMessages] : [...currentMessages, ...messages];
   }
 
   static prepend(currentMessages = [], messages, inverted = true) {
